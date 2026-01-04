@@ -149,3 +149,9 @@ kubectl delete ns monitoring
 ```bash
 eksctl delete cluster --name observability
 ```
+NEW VERSION OF KUBE PROMETHEUS STACK
+helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
+  -n monitoring \
+  --version 80.10.0 \
+  -f ./custom_kube_prometheus_stack.yml \
+  --timeout 15m
